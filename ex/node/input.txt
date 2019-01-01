@@ -1,0 +1,4 @@
+ Let's understand what is a callback fuction.
+
+What the HELL is it?
+

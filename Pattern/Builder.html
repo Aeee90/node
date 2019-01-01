@@ -1,0 +1,39 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Builder Pattern</title>
+</head>
+<body>
+</body>
+<script>
+const RTFReader = class {
+    parserRTF(){}
+};
+
+const TextConverter = class {
+    convertCharacter(char){ throw 'Override!'; }
+    convertFontChange(Font){ throw 'Override!'; }
+    convertParagraph(){ throw 'Override!'; }
+};
+
+const ASCIIConverter = class extends TextConverter {
+    convertCharacter(){}
+    getASCIIText(){}
+};
+
+const TeXConverter = class extends TextConverter {
+    convertCharacter(char){ throw 'Override!'; }
+    convertFontChange(Font){ throw 'Override!'; }
+    convertParagraph(){ throw 'Override!'; }
+    getTeXText(){}
+};
+
+const TextWidgetConverter = class extends TextConverter {
+    convertCharacter(char){ throw 'Override!'; }
+    convertFontChange(Font){ throw 'Override!'; }
+    convertParagraph(){ throw 'Override!'; }
+    getTextWdget()
+}
+</script>
+</html>

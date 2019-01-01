@@ -1,0 +1,48 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Maze</title>
+</head>
+<body>
+    <section id="maze"></section>
+</body>
+<script>
+
+const DIRECTION = ['North', 'South', 'East', 'West'].reduce((a, v)=>{a[v]=Symbol(v); return a;}, {});
+console.log(DIRECTION);
+
+const MapSite = class{
+    enter() { throw 'Overrid!'}
+};
+
+const Room = class extends MapSite {
+    constructor(roomNo){ Object.assign(this, {roomNO});}
+    enter(){}
+    setSide(){}
+    getSide(){}
+};
+
+
+const Wall = class extends MapSite {
+    enter(){ }
+};
+
+const Door = class extends MapSite {
+    constructor(preRoomNO, postRoomNO){ Object.assign(this, {isOpen: true})}
+    enter(){}
+};
+
+const Maze = class {
+    addRoom(room){ }
+    getRoom(idx){ }
+    createMaze(){
+
+    }
+};
+
+
+
+
+</script>
+</html>

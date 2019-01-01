@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta charset="title">
+    <title>Google Map</title>
+</head>
+<body>
+    <section id="map">
+
+    </section>
+
+</body>
+<script>
+const Rectangle = (()=>{
+    const CONFIG_DEFALUT = {
+        strokeColor: 'red',
+        strokeOpacity: 0.1,
+        fillOpacity: 0.05,
+        editable: true,
+        draggable: true
+    };
+    const _polygon = Symbol();
+    return class extends google.maps.Rectangle{
+
+        constructor(config, map){
+            if((config instanceof Object)) throw 'Ivalid Polygon config';
+            if(!(map instanceof google.maps.Map)) throw 'Ivalid Polygon Map';
+            super(config ||CONFIG_DEFALUT);
+
+            super.setMap(map);
+        }
+    };
+})();
+
+const GroundOverlay = (()=>{
+    const _overlay = Symbol(), _img = Symbol(), _reg = Symbol(), _rot = Symbol();
+    return class {
+        
+        constructor(path, bounds, map, degree){
+            if(typeof path !== 'string' || !path) throw 'Invalid GroundOverlay path';
+            if(!bounds) throw 'Invalid GroundOverlay bounds';
+            if(!(map instanceof google.maps.Map)) throw 'Ivalid GroundOverlay Map';
+
+            const historicalOverlay = this[_overlay] = new google.maps.GroundOverlay(path, bounds);
+            historicalOverlay.setMap(map);
+            this[_rot] = degree;
+            reg = new RegExp(path + "$");            
+        }
+        
+        rotate(rotate){
+            if(Number.isInteger(rotate)) this[_rot] = rotate;
+            this[_img].style.transform='rotate('+this[_rot]+'deg)';
+        };
+
+        refresh=function(){ 
+            var imgs = document.getElementsByTagName('img');
+            for(var i=0; i<imgs.length; i++) { if(this[_reg].test(imgs[i].src)){ this[_img] = imgs[i]; break; } };
+        };
+
+        renew=function(path, bounds){
+            path = path? path : this[_img].src;
+            bounds = bounds? bounds : this[_overlay].getBounds();
+            this[_overlay] = setMap(null);
+            this[_overlay] = new google.maps.GroundOverlay(path, bounds);
+            this[_overlay].setMap(map);
+        };
+    };
+})();
+
+const initMap =_=>{
+    
+};
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-lUGjUl8d4N3xYbSgNYeCfOM94cmkWoU&callback=initMap"/>
+</html>
