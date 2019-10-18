@@ -70,12 +70,12 @@ const MIX = class {
         switch(target){
             case 'A': for(let i=F[0]; i<=F[1]; i++) this.rA[i] = this.memory[ADRESS][i]; this.rA[0] *= negative; comment=this.rA;  break;
             case 'X': for(let i=F[0]; i<=F[1]; i++) this.rX[i] = this.memory[ADRESS][i]; this.rX[0] *= negative; comment=this.rX; break;
-            case '1': this.rI1[1] = tihs.memory[4]; this.rI1[2] = tihs.memory[5]; this.rI1[0] *= negative; comment=ths.rI1; break;
-            case '2': this.rI2[1] = tihs.memory[4]; this.rI2[2] = tihs.memory[5]; this.rI2[0] *= negative; comment=ths.rI2; break;
-            case '3': this.rI3[1] = tihs.memory[4]; this.rI3[2] = tihs.memory[5]; this.rI3[0] *= negative; comment=ths.rI3; break;
-            case '4': this.rI4[1] = tihs.memory[4]; this.rI4[2] = tihs.memory[5]; this.rI4[0] *= negative; comment=ths.rI4; break;
-            case '5': this.rI5[1] = tihs.memory[4]; this.rI5[2] = tihs.memory[5]; this.rI5[0] *= negative; comment=ths.rI5; break;
-            case '6': this.rI6[1] = tihs.memory[4]; this.rI6[2] = tihs.memory[5]; this.rI6[0] *= negative; comment=ths.rI6; break;
+            case '1': this.rI1[1] = this.memory[4]; this.rI1[2] = this.memory[5]; this.rI1[0] *= negative; comment=this.rI1; break;
+            case '2': this.rI2[1] = this.memory[4]; this.rI2[2] = this.memory[5]; this.rI2[0] *= negative; comment=this.rI2; break;
+            case '3': this.rI3[1] = this.memory[4]; this.rI3[2] = this.memory[5]; this.rI3[0] *= negative; comment=this.rI3; break;
+            case '4': this.rI4[1] = this.memory[4]; this.rI4[2] = this.memory[5]; this.rI4[0] *= negative; comment=this.rI4; break;
+            case '5': this.rI5[1] = this.memory[4]; this.rI5[2] = this.memory[5]; this.rI5[0] *= negative; comment=this.rI5; break;
+            case '6': this.rI6[1] = this.memory[4]; this.rI6[2] = this.memory[5]; this.rI6[0] *= negative; comment=this.rI6; break;
             default : comment = `'${OP}는 잘못된 명령'`; break;
         }
 
