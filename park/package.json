@@ -15,6 +15,6 @@
     "image-compressor.js": "^1.1.1",
     "morgan": "~1.9.0",
     "serve-favicon": "~2.4.5",
-    "xlsx": "^0.12.6"
+    "xlsx": "^0.17.0"
   }
 }
